@@ -1,0 +1,6 @@
+@SGCAE.API_HostAddress = http://localhost:5139
+
+GET {{SGCAE.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
