@@ -51,16 +51,17 @@ builder.Services.AddScoped<ObtenerRegistrosAccesoHandler>();
 builder.Services.AddScoped<FiltrarRegistrosAccesoHandler>();
 
 
-// Configurar OpenAPI
+// Configurar Swagger
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddOpenApi();
+builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Habilitar OpenAPI en entorno de desarrollo
+// Habilitar swagger en entorno de desarrollo
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
 
 // Configurar el pipeline HTTP
